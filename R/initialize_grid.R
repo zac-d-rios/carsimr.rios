@@ -1,3 +1,16 @@
+#' Initializing the grid
+#'
+#' This function initializes a matrix, representing a grid of cars.
+#'
+#' @param rho Either a proportion from 0 to 1 of the grid to be occupied by
+#'  cars, or an integer value specifying the number of cars on the grid.
+#'
+#' @param dims A numeric vector of length 2 specifying the number of
+#'  (rows, columns) of the grid.
+#' @param prob_blue Probability that a given car is blue.
+#'
+#' @returns An object of class carsimr, essentially a matrix with a generic for
+#'  plot.
 #' @export
 
 initialize_grid <- function(rho, dims, prob_blue) {
@@ -17,6 +30,7 @@ initialize_grid <- function(rho, dims, prob_blue) {
     return(grid_init)
   }
   if (rho >= 1) {
+    rho <- round(rho)
     car <- rep(1, rho)
     no_car <- rep(0, total - rho)
     blue <- round(length(car) * prob_blue)
@@ -29,45 +43,4 @@ initialize_grid <- function(rho, dims, prob_blue) {
     grid_init <- carsimr(grid_init)
     return(grid_init)
   }
-}
-
-move_blue <- function(t_grid) {
-  starting <- which(t_grid == 2, arr.ind = TRUE)
-  next_move <- starting
-  next_move[, 1] <- next_move[, 1] - 1
-  next_move[, 1][next_move[, 1] == 0] <- nrow(t_grid)
-  can_move <- t_grid[next_move] == 0
-  t_grid[matrix(next_move[can_move, ], ncol = 2)] <- 2
-  t_grid[matrix(starting[can_move, ], ncol = 2)] <- 0
-  return(t_grid)
-}
-
-
-move_red <- function(t_grid) {
-  starting <- which(t_grid == 1, arr.ind = TRUE)
-  next_move <- starting
-  next_move[, 2] <- next_move[, 2] + 1
-  next_move[, 2][next_move[, 2] > ncol(t_grid)] <- 1
-  can_move <- t_grid[next_move] == 0
-  t_grid[matrix(next_move[can_move, ], ncol = 2)] <- 1
-  t_grid[matrix(starting[can_move, ], ncol = 2)] <- 0
-  return(t_grid)
-}
-
-#' @export
-
-move_cars <- function(t_grid, trials) {
-  carsimr_list_temp <- vector(mode = "list", length = trials + 1)
-  carsimr_list_temp[[1]] <- t_grid
-  for (i in 1:trials) {
-    if (i %% 2 == 1) {
-      temp <- move_blue(carsimr_list_temp[[i]])
-    }
-    if (i %% 2 == 0) {
-      temp <- move_red(carsimr_list_temp[[i]])
-    }
-    carsimr_list_temp[[i + 1]] <- temp
-  }
-  obj <- carsimr_list(carsimr_list_temp)
-  return(obj)
 }
