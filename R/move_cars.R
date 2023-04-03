@@ -56,8 +56,8 @@ move_red <- function(t_grid) {
 #'  along with along with each of the "trial" movements.
 #'
 #' @examples
-#'  move_cars(initialize_grid(rho=10, dims=c(5, 5), prob_blue=0.7), trials=5)
-#'
+#' t_grid <- initialize_grid(rho = 10, dims = c(5, 5), prob_blue = 0.5)
+#' move_cars(t_grid, trials = 5)
 #'
 #' @export
 

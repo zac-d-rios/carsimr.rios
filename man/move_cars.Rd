@@ -21,7 +21,7 @@ This function moves the cars in the grid created by the initialize_grid
 function.
 }
 \examples{
- move_cars(initialize_grid(rho=10, dims=c(5, 5), prob_blue=0.7), trials=5)
-
+t_grid <- initialize_grid(rho = 10, dims = c(5, 5), prob_blue = 0.5)
+move_cars(t_grid, trials = 5)
 
 }

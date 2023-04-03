@@ -23,10 +23,10 @@ plot.
 This function initializes a matrix, representing a grid of cars.
 }
 \examples{
- # Proportion rho
- initialize_grid(rho = 0.5, dims = c(3, 5), prob_blue = 0.5)
+# Proportion rho
+initialize_grid(rho = 0.5, dims = c(3, 5), prob_blue = 0.5)
 
- # Integer rho
- initialize_grid(rho = 8, dims = c(3, 5), prob_blue = 0.5)
+# Integer rho
+initialize_grid(rho = 8, dims = c(3, 5), prob_blue = 0.5)
 
 }

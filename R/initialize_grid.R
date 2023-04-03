@@ -13,32 +13,32 @@
 #'  plot.
 #'
 #' @examples
-#'  # Proportion rho
-#'  initialize_grid(rho = 0.5, dims = c(3, 5), prob_blue = 0.5)
+#' # Proportion rho
+#' initialize_grid(rho = 0.5, dims = c(3, 5), prob_blue = 0.5)
 #'
-#'  # Integer rho
-#'  initialize_grid(rho = 8, dims = c(3, 5), prob_blue = 0.5)
+#' # Integer rho
+#' initialize_grid(rho = 8, dims = c(3, 5), prob_blue = 0.5)
 #'
 #' @export
 
 initialize_grid <- function(rho, dims, prob_blue) {
-  if (!is.numeric(rho)){
+  if (!is.numeric(rho)) {
     stop("Invalid input for rho, must be numeric")
   }
-  if (rho >= 1 & rho %% 1 != 0){
+  if (rho >= 1 && rho %% 1 != 0) {
     warning("Rho is not an integer and is greater than 1, rounding to integer")
   }
-  if (!is.numeric(prob_blue)){
+  if (!is.numeric(prob_blue)) {
     stop("prob_blue must be numeric")
   }
-  if (prob_blue < 0 | prob_blue> 1){
+  if (prob_blue < 0 || prob_blue > 1) {
     stop("Probability that a car should be blue cannot be greater than 1 or
          less than 0")
   }
-  if (!is.numeric(dims)){
+  if (!is.numeric(dims)) {
     stop("dims must be a numeric vector of length 2")
   }
-  if (length(dims) != 2){
+  if (length(dims) != 2) {
     stop("dims must be a numeric vector of length 2")
   }
 
