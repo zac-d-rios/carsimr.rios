@@ -1,10 +1,13 @@
 Package: carsimr.rios
-Title: What the Package Does (One Line, Title Case)
+Title: Simulate/visualize simple car movements
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Zac", "Rios", ,"zacdrios@gmail.com", role = c("aut", "cre"))
+Description: This package allows users to simulate movement for very simple 
+    cars. Blue cars move upward if unimpeded and red cars move the right if 
+    unimpeded. The cars wrap around when they get to the top or right, 
+    respectively. Additionally, the package allows users to visualize this process
+    through generics plot.carsimr and plot.carsimr_list.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

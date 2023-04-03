@@ -1,7 +1,15 @@
+#' Constructor for carsimr object.
+#'
+#' @param x A matrix to be coerced.
+#' @noRd
 new_carsimr <- function(x) {
   structure(x, class = "carsimr")
 }
 
+#' Validator for carsimr object.
+#'
+#' @param x A matrix to be validated.
+#' @noRd
 validate_carsimr <- function(x) {
   is.matrix(x)
 }
@@ -26,10 +34,18 @@ carsimr <- function(x) {
   }
 }
 
+#' Constructor for carsimr_list object.
+#'
+#' @param x A list to be coerced.
+#' @noRd
 new_carsimr_list <- function(x) {
   structure(x, class = "carsimr_list")
 }
 
+#' Validator for carsimr_list object.
+#'
+#' @param x A list to be validated.
+#' @noRd
 validate_carsimr_list <- function(x) {
   check1 <- is.list(x)
   classes_in_list <- lapply(x, class)

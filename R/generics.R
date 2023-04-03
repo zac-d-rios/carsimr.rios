@@ -17,12 +17,14 @@
 #' @export
 
 plot.carsimr <- function(x, y, ...) {
+  # Remove class attribute from carsimr object.
   attr(x, "class") <- NULL
+
+  # Use image function with set aspect ratio.
   image(seq_len(ncol(x)), seq_len(nrow(x)), t(x[nrow(x):1, ]),
     col = c("gray", "red", "blue"),
-    axes = FALSE, xlab = "", ylab = "", breaks = -1:2, ...
+    axes = FALSE, xlab = "", ylab = "", breaks = -1:2, asp = 1, ...
   )
-  grid(ncol(x), nrow(x), lty = "solid", col = "black")
 }
 
 
@@ -44,6 +46,7 @@ plot.carsimr <- function(x, y, ...) {
 #' @export
 
 plot.carsimr_list <- function(x, y, pause = 1, ...) {
+  # Plot carsimr objects sequentially
   for (i in seq_along(x)) {
     plot(x[[i]], main = paste("Iteration", i - 1, sep = " "))
     Sys.sleep(pause)
