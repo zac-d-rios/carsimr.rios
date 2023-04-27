@@ -1,6 +1,7 @@
 #' Initializing the grid
 #'
-#' This function initializes a matrix, representing a grid of cars.
+#' This function initializes a matrix, representing a grid of cars. Now comes
+#' with an Rcpp version!
 #'
 #' @param rho Either a proportion from 0 to 1 of the grid to be occupied by
 #'  cars, or an integer value specifying the number of cars on the grid.

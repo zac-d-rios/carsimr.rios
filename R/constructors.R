@@ -72,3 +72,19 @@ carsimr_list <- function(x) {
     stop("carsimr_list currently only takes lists of carsimr objects")
   }
 }
+
+#' Convert objects returned from Rcpp to usable R classes
+#'
+#' This function would construct carsimr objects, after they have been returned
+#' from initialize_grid_cpp.
+#'
+#' @param x A matrix returned from initialize_grid_cpp.
+#'
+#' @returns A carsimr object.
+#'
+#' @export
+cpp_convert_carsimr <- function(x){
+  # With my Rcpp implementation, this function is not useful
+  # This idea is valuable in more complicated cases though
+  return(x)
+}

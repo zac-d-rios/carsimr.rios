@@ -45,7 +45,7 @@ move_red <- function(t_grid) {
 #' Moving cars
 #'
 #' This function moves the cars in the grid created by the initialize_grid
-#'  function.
+#'  function. Now comes with an Rcpp version!
 #'
 #' @param t_grid An object of class carsimr.
 #'
