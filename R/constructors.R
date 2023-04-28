@@ -83,7 +83,7 @@ carsimr_list <- function(x) {
 #' @returns A carsimr object.
 #'
 #' @export
-cpp_convert_carsimr <- function(x){
+cpp_convert_carsimr <- function(x) {
   # With my Rcpp implementation, this function is not useful
   # This idea is valuable in more complicated cases though
   return(x)
